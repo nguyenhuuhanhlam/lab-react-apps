@@ -1,35 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { ProLayout } from '@ant-design/pro-components';
+import { Button, Result } from 'antd';
+import { SmileFilled, CrownFilled, TabletFilled } from '@ant-design/icons';
+import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
+const defaultProps = {
+  route: {
+    path: '/',
+    routes: [
+      {
+        path: '/welcome',
+        name: 'Welcome',
+        icon: <SmileFilled />,
+      },
+      {
+        path: '/admin',
+        name: 'Admin',
+        icon: <CrownFilled />,
+        routes: [
+          {
+            path: '/admin/sub-page',
+            name: 'Sub-Page',
+            icon: <CrownFilled />,
+          },
+        ],
+      },
+      {
+        path: '/list',
+        name: 'List',
+        icon: <TabletFilled />,
+      },
+    ],
+  },
+  location: {
+    pathname: '/',
+  },
+};
+
+export default function App() {
+  const location = useLocation();
+  const navigate = useNavigate();
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
+    <div
+      id="test-pro-layout"
+      style={{
+        height: '100vh',
+      }}
+    >
+      <ProLayout
+        title="Ant Design Pro"
+        location={{
+          pathname: location.pathname,
+        }}
+        menuItemRender={(item, dom) => (
+          <Link to={item.path || '/'}>{dom}</Link>
+        )}
+        route={defaultProps.route}
+      >
+        <Routes>
+          <Route path="/" element={<Result status="404" title="Home" subTitle="Welcome to the app" extra={<Link to="/welcome"><Button type="primary">Go to Welcome</Button></Link>} />} />
+          <Route path="/welcome" element={<div style={{ padding: 24, textAlign: 'center' }}><h2>Welcome Page</h2></div>} />
+          <Route path="/admin/sub-page" element={<div style={{ padding: 24, textAlign: 'center' }}><h2>Admin Sub Page</h2></div>} />
+          <Route path="/list" element={<div style={{ padding: 24, textAlign: 'center' }}><h2>List Page</h2></div>} />
+          <Route path="*" element={<Result status="404" title="404" subTitle="Sorry, the page you visited does not exist." extra={<Button type="primary" onClick={() => navigate('/')}>Back Home</Button>} />} />
+        </Routes>
+      </ProLayout>
+    </div>
+  );
+};
