@@ -35,7 +35,7 @@ const items = [
 
 const TimelinePage = () => {
 	return (
-		<div style={{ padding: 24, background: '#fff' }}>
+		<div className="overflow-hidden" style={{ padding: 24, background: '#fff' }}>
 			<h2>Timeline Demo</h2>
 			<Timeline
 				groups={groups}
@@ -48,3 +48,5 @@ const TimelinePage = () => {
 };
 
 export default TimelinePage;
+
+
