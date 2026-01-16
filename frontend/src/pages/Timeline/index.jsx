@@ -1,52 +1,74 @@
 import React from 'react';
-import Timeline from 'react-calendar-timeline';
-// make sure you include the timeline stylesheet or the timeline will not be styled
-import 'react-calendar-timeline/style.css';
-import moment from 'moment';
+import {
+	Epg,
+	Layout,
+	useEpg,
+	ProgramBox,
+	ProgramContent,
+	ChannelBox,
+} from 'planby';
 
-const groups = [
-	{ id: 1, title: 'group 1' },
-	{ id: 2, title: 'group 2' }
+import logo from '../../assets/react.svg';
+
+const channels = [
+	{
+		uuid: 'room-1',
+		title: 'Room 1',
+	},
+	{
+		uuid: 'room-2',
+		title: 'Room 2',
+	},
 ];
 
-const items = [
+const epg = [
 	{
-		id: 1,
-		group: 1,
-		title: 'item 1',
-		start_time: moment(),
-		end_time: moment().add(1, 'hour')
+		uuid: 'meeting-1',
+		channelUuid: 'room-1',
+		title: 'Planning meeting',
+		description: 'Sprint planning',
+		since: '2026-01-16T08:00:00',
+		till: '2026-01-16T09:30:00',
 	},
 	{
-		id: 2,
-		group: 2,
-		title: 'item 2',
-		start_time: moment().add(-0.5, 'hour'),
-		end_time: moment().add(0.5, 'hour')
+		uuid: 'meeting-2',
+		channelUuid: 'room-2',
+		title: 'Demo',
+		since: '2026-01-16T10:00:00',
+		till: '2026-01-16T11:00:00',
 	},
-	{
-		id: 3,
-		group: 1,
-		title: 'item 3',
-		start_time: moment().add(2, 'hour'),
-		end_time: moment().add(3, 'hour')
-	}
 ];
 
 const TimelinePage = () => {
-	return (
-		<div className="overflow-hidden" style={{ padding: 24, background: '#fff' }}>
-			<h2>Timeline Demo</h2>
-			<Timeline
-				groups={groups}
-				items={items}
-				defaultTimeStart={moment().add(-12, 'hour')}
-				defaultTimeEnd={moment().add(12, 'hour')}
-			/>
-		</div>
-	);
-};
+	const hourWidth = 80;          // chỉnh 60 / 80 / 100 tuỳ thích
+	const dayWidth = 24 * hourWidth;
 
-export default TimelinePage;
+	const { getEpgProps, getLayoutProps } = useEpg({
+		channels,
+		epg,
+		startDate: '2026-01-16T06:00:00',
+		endDate: '2026-01-16T18:00:00',
+		isBaseTimeFormat: true,
+		dayWidth,
+		width: 1200,
+	});
+
+	return (
+		<div className="w-full min-w-0 h-[650px] overflow-hidden">
+			<h2 className="m-0 p-2">Timeline Demo</h2>
+
+			<div className="relative w-full min-w-0 h-[600px] overflow-hidden">
+				<Epg {...getEpgProps()}>
+					<Layout {...getLayoutProps()}
+
+					/>
+				</Epg>
+			</div>
+
+		</div>
+	)
+}
+
+export default TimelinePage
 
 
