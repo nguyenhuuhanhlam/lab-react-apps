@@ -4,6 +4,8 @@ import AdminSubPage from '../pages/Admin/SubPage'
 import List from '../pages/List'
 import TimelinePage from '../pages/Timeline'
 
+import { IconHomeFilled, IconSettings, IconCalendar, IconFlask } from '@tabler/icons-react'
+
 export default {
 	route: {
 		path: '/',
@@ -11,13 +13,25 @@ export default {
 			{
 				path: '/welcome',
 				name: 'Welcome',
-				icon: <SmileFilled />,
+				icon: <IconHomeFilled size={16} />,
 				component: <Welcome />,
+			},
+			{
+				path: '/list',
+				name: 'List',
+				icon: <IconFlask size={16} />,
+				component: <List />,
+			},
+			{
+				path: '/schedules',
+				name: 'Schedules',
+				icon: <IconCalendar size={16} />,
+				component: <TimelinePage />,
 			},
 			{
 				path: '/admin',
 				name: 'Admin',
-				icon: <CrownFilled />,
+				icon: <IconSettings size={16} />,
 				routes: [
 					{
 						path: '/admin/sub-page',
@@ -26,18 +40,6 @@ export default {
 						component: <AdminSubPage />,
 					},
 				],
-			},
-			{
-				path: '/list',
-				name: 'List',
-				icon: <TabletFilled />,
-				component: <List />,
-			},
-			{
-				path: '/timeline',
-				name: 'Timeline',
-				icon: <CalendarOutlined />,
-				component: <TimelinePage />,
 			},
 		],
 	},
