@@ -1,7 +1,7 @@
-import BasicLayout from './layouts/BasicLayout';
+import BasicLayout from './layouts/basic-layout'
 
 export default function App() {
   return (
     <BasicLayout />
-  );
-};
+  )
+}

@@ -1,8 +1,8 @@
-import { SmileFilled, CrownFilled, TabletFilled, CalendarOutlined } from '@ant-design/icons';
-import Welcome from '../pages/Welcome';
-import AdminSubPage from '../pages/Admin/SubPage';
-import List from '../pages/List';
-import TimelinePage from '../pages/Timeline';
+import { SmileFilled, CrownFilled, TabletFilled, CalendarOutlined } from '@ant-design/icons'
+import Welcome from '../pages/Welcome'
+import AdminSubPage from '../pages/Admin/SubPage'
+import List from '../pages/List'
+import TimelinePage from '../pages/Timeline'
 
 export default {
 	route: {
@@ -44,4 +44,4 @@ export default {
 	location: {
 		pathname: '/',
 	},
-};
+}
