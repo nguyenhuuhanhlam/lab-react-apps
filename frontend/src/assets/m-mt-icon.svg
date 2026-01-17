@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.44 43.44">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1b75bb;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <polygon class="cls-1" points="12.41 12.41 15.52 12.41 27.93 12.41 31.03 12.41 43.44 12.41 43.44 0 0 0 0 12.41 12.41 12.41"/>
+      <rect class="cls-1" y="15.52" width="12.41" height="27.93"/>
+      <rect class="cls-1" x="15.52" y="15.52" width="12.41" height="27.93"/>
+      <rect class="cls-1" x="31.03" y="15.52" width="12.41" height="27.93"/>
+    </g>
+  </g>
+</svg>

@@ -1,5 +1,5 @@
 import { SmileFilled, CrownFilled, TabletFilled, CalendarOutlined } from '@ant-design/icons'
-import Welcome from '../pages/Welcome'
+import Welcome from '../pages/welcome'
 import AdminSubPage from '../pages/Admin/SubPage'
 import List from '../pages/List'
 import TimelinePage from '../pages/Timeline'

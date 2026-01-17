@@ -2,7 +2,7 @@ import React from 'react';
 
 const Welcome = () => {
 	return (
-		<div style={{ padding: 24, textAlign: 'center' }}>
+		<div>
 			<h2>Welcome Page</h2>
 		</div>
 	);

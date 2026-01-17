@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client'
-import './app.css'
+// import './app.css'
 import App from './app'
 import { BrowserRouter } from 'react-router-dom'
 
