@@ -1,26 +1,114 @@
-/* .fc .fc-col-header-cell {
-	background-color: lightgray;
+.fc-theme-dark {
+	--fc-page-bg-color: #0B1220;
+	--fc-neutral-bg-color: #0F1A2B;
+	--fc-neutral-text-color: #E6EDF7;
+
+	--fc-border-color: #22314F;
+
+	--fc-today-bg-color: rgba(59, 130, 246, 0.15);
+
+	--fc-event-bg-color: #3B82F6;
+	--fc-event-border-color: #3B82F6;
+	--fc-event-text-color: #071124;
+
+	--fc-button-bg-color: #0F1A2B;
+	--fc-button-border-color: #22314F;
+	--fc-button-text-color: #E6EDF7;
+
+	--fc-button-hover-bg-color: #16233A;
+	--fc-button-hover-border-color: #2E4170;
+
+	--fc-button-active-bg-color: #2563EB;
+	--fc-button-active-border-color: #2563EB;
+	--fc-button-active-text-color: #ffffff;
 }
 
-.fc .fc-col-header-cell-cushion {
-	color: #000 !important;
+/* Fix & polish */
+.fc-theme-dark .fc {
+	font-family: ui-sans-serif, system-ui;
+	color: #E6EDF7;
 }
 
-.fc .fc-daygrid-day-number {
-	color: dimgray;
-} */
+.fc-theme-dark .fc-toolbar-title {
+	font-weight: 700;
+	font-size: 18px;
+}
 
-/* .fc .fc-event {
-	background-color: blue;
-	border-color: transparent;
-} */
+/* Grid background */
+.fc-theme-dark .fc-scrollgrid,
+.fc-theme-dark .fc-scrollgrid table {
+	border-color: #22314F;
+}
 
+.fc-theme-dark .fc-daygrid-day-frame {
+	background: #0B1220;
+}
 
+/* Header (Mon Tue...) */
+.fc-theme-dark .fc-col-header-cell-cushion {
+	padding: 10px 0;
+	color: #A9B4C7;
+	font-weight: 600;
+}
 
+/* Day number */
+.fc-theme-dark .fc-daygrid-day-number {
+	color: #A9B4C7;
+	font-weight: 400;
+}
 
-/* .fc .fc-daygrid-block-event {
-	margin-left: 4px !important;
-	margin-right: 4px !important;
-	border-radius: 8px;
+/* Buttons */
+.fc-theme-dark .fc-button {
+	border-radius: 10px;
+	padding: 7px 10px;
+	box-shadow: none;
+}
+
+.fc-theme-dark .fc-button:focus {
+	background-color: rgba(59, 130, 246, 0.5) !important;
+	box-shadow: none !important;
+}
+
+/* Events */
+.fc-theme-dark .fc-event {
+	border-radius: 10px;
+	padding: 2px 4px;
+}
+
+.fc-theme-dark .fc-event:hover {
+	background-color: rgba(225, 233, 82, 0.25) !important;
+	color: #E6EDF7;
+}
+
+.fc-theme-dark .fc-event-title {
+	font-weight: 600;
+}
+
+/* Now indicator */
+.fc-theme-dark .fc-timegrid-now-indicator-line {
+	border-color: #F97316;
+}
+
+/* +n more */
+.fc .fc-more-link {
+	display: inline-block;
+	margin-top: 2px;
+	padding: 2px 8px;
+}
+
+/* Event week/day (timeGrid) */
+.fc .fc-timegrid-event,
+.fc .fc-v-event {
+	background: rgba(34, 197, 94, 0.22) !important;
+	border: 1px solid rgba(34, 197, 94, 0.45) !important;
+	border-radius: 10px;
+}
+
+.fc .fc-event-main {
+	color: #E6EDF7 !important;
+}
+
+.fc .fc-scrollgrid {
+	border-radius: 10px;
 	overflow: hidden;
-} */
+}

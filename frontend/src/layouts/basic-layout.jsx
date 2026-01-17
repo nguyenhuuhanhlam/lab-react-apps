@@ -22,7 +22,7 @@ const BasicLayout = () => {
 	const location = useLocation()
 	const navigate = useNavigate()
 
-	const flatRoutes = getRoutes(routeConfig.route.routes);
+	const flatRoutes = getRoutes(routeConfig.route.routes)
 
 	return (
 		<ProLayout
@@ -34,6 +34,8 @@ const BasicLayout = () => {
 			menuItemRender={(item, dom) => (
 				<Link to={item.path || '/'}>{dom}</Link>
 			)}
+			collapsedButtonRender={false}
+			collapsed={true}
 			route={routeConfig.route}
 		>
 			<Routes>
