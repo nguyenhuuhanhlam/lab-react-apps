@@ -112,3 +112,7 @@
 	border-radius: 10px;
 	overflow: hidden;
 }
+
+.fc-theme-dark .fc-daygrid-day.fc-day-today .fc-daygrid-day-frame {
+	background: var(--fc-today-bg-color) !important;
+}

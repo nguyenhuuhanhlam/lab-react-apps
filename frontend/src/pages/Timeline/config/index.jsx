@@ -2,15 +2,23 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 
-export const fc_props = {
+export const fc_props = (isMobile) => ({
     plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
 
-    initialView: "dayGridMonth",
+    initialView: isMobile ? 'timeGridDay' : 'dayGridMonth',
     headerToolbar: {
         left: 'prev,next today',
         center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        right: isMobile ? '' : 'dayGridMonth,timeGridWeek,timeGridDay',
     },
+
+    buttonText: {
+        today: 'Today',
+        month: 'Month',
+        week: 'Week',
+        day: 'Day',
+    },
+
     firstDay: 1,
 
     eventTimeFormat: {
@@ -19,7 +27,8 @@ export const fc_props = {
         hour12: false,
     },
 
-    dayMaxEventRows: 2,
+    height: 'auto',
+    dayMaxEvents: 2,
 
     nowIndicator: true,
-}
+})

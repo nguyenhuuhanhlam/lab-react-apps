@@ -34,8 +34,8 @@ const BasicLayout = () => {
 			menuItemRender={(item, dom) => (
 				<Link to={item.path || '/'}>{dom}</Link>
 			)}
-			collapsedButtonRender={false}
-			collapsed={true}
+			// collapsedButtonRender={true}
+			// collapsed={false}
 			route={routeConfig.route}
 		>
 			<Routes>
