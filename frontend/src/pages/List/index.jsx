@@ -2,7 +2,7 @@ import React from 'react';
 
 const List = () => {
 	return (
-		<div style={{ padding: 24, textAlign: 'center' }}>
+		<div>
 			<h2>List Page</h2>
 		</div>
 	);
